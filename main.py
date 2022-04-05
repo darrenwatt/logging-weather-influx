@@ -32,7 +32,7 @@ while True:
     currentweather_split = currentweather.split()
     currentweather_split2 = currentweather_split[1].split('>')
     currentweather_split3 = currentweather_split2[2].split('°')
-    denmead_temp = float(currentweather_split3[0])
+    local_temp = float(currentweather_split3[0])
 
     dewpointCell = str(cells[35])
     dewpointCell_split = dewpointCell.split('>')
@@ -43,7 +43,7 @@ while True:
     print("Dewpoint is " + str(dewpoint) + "°C")
 
     try:
-        write_api.write(bucket=bucketname, record=[{"measurement": label_measurement, "fields": {label_dewpoint: dewpoint, label_temperature: denmead_temp } } ])
+        write_api.write(bucket=bucketname, record=[{"measurement": label_measurement, "fields": {label_dewpoint: dewpoint, label_temperature: local_temp } } ])
     except Exception as e:
         print(e)
 
