@@ -39,7 +39,7 @@ while True:
     dewpointCell_split1 = dewpointCell_split[2].split('°')
     dewpoint = float(dewpointCell_split1[0])
 
-    print("Temperature is " + str(denmead_temp) + "°C")
+    print("Temperature is " + str(local_temp) + "°C")
     print("Dewpoint is " + str(dewpoint) + "°C")
 
     try:
